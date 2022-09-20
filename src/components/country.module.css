@@ -43,7 +43,8 @@ option {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto;
-    width: 100%;
+    width: 90%;
+    gap: 10px;
   }
   .pawan>div{
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -57,13 +58,13 @@ option {
     justify-content: space-around;
   }
  
-  @media all and (max-width: 340px)   {
+  @media all and (max-width: 500px)   {
     .pawan {
       grid-template-columns: repeat(1, 1fr);
     }
   }
 
-  @media all and (max-width: 1007px)  {
+  @media all and (max-width: 1000px)  {
     .pawan {
       grid-template-columns: repeat(2, 1fr);
     }
