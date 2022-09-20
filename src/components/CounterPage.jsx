@@ -65,12 +65,14 @@ const CounterPage = () => {
     //   setCountrydata(list);
     // }
     const searchFun = (key) => {
-      fetch("https://restcountries.com/v3.1/all?q=" + key).then((res) => {
-        res.json().then((data) => {
-          //console.log(data);
-          setCountrydata([data]);
-        });
-      });
+        fetch("https://restcountries.com/v3.1/all")
+            .then((res) => {
+                res.json()
+                    .then((data) => {
+                        console.log(data);
+                })
+        })
+         
     };
 
     return (
