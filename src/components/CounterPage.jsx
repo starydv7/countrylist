@@ -5,14 +5,14 @@ import { AppContext } from './Context';
 import { useNavigate } from "react-router-dom";
 const CounterPage = () => {
     const [countrydata, setCountrydata] = useState([]);
-    const [setNewdata, newdata] = useContext(AppContext);
+     const { setNewdata, newdata } = useContext(AppContext);
     const navigate = useNavigate();
     const fetchData = () => {
         fetch("https://restcountries.com/v3.1/all")
             .then((res) => res.json())
             .then((res) => {
                 console.log(res)
-            //setCountryData(res)
+            setCountrydata(res)
             }).catch((err) => {
             console.log(err)
         })
@@ -29,7 +29,7 @@ const CounterPage = () => {
             setCountrydata([...newdata])
             console.log(newdata)
         }
-        if (value == "desc") {
+        if (value === "desc") {
             const newdata = countrydata.sort((a, b) => {
                 return b.population-a.population
             })
@@ -76,7 +76,7 @@ const CounterPage = () => {
         </span></h3> 
        </div>
 
-    <div className={styles.container}>
+    <div className={styles.pawan}>
         {
         countrydata && countrydata.map((el,i)=>{
             return <div key={i}>
