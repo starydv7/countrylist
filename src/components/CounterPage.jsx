@@ -6,7 +6,7 @@ const CounterPage = () => {
         fetch("https://restcountries.com/v3.1/all")
             .then((res) => res.json())
             .then((res) => {
-            setData(res)
+            setCountryData(res)
             }).catch((err) => {
             console.log(err)
         })
@@ -14,7 +14,7 @@ const CounterPage = () => {
     useEffect(() => {
         fetchData()
     }, [])
-    console.log(setData);
+    console.log(setCountryData);
   return (
     <div>CounterPage</div>
   )
