@@ -9,6 +9,7 @@ const CounterPage = () => {
     const [countryList, setCountryList] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
+    //data fetch full data
     const fetchData = () => {
         fetch("https://restcountries.com/v3.1/all")
             .then((res) => res.json())
@@ -22,6 +23,7 @@ const CounterPage = () => {
     useEffect(() => {
         fetchData()
     }, [])
+    //sorting working
     const sorthandle=(e) => {
         const { value } = e.target;
         if (value === "asc") {
@@ -39,6 +41,7 @@ const CounterPage = () => {
             console.log(newdata)
         }
     }
+    //filter full working
      const filterhandle = (e) => {
        const { value } = e.target;
        if (value !== "empty") {
@@ -51,7 +54,9 @@ const CounterPage = () => {
              console.log(err);
            });
        }
-     };
+    };
+    
+    //searching minor mistakes
     function handleChange(e) {
       setSearchTerm(e.target.value);
       const list = countrydata.filter((p) =>
