@@ -57,13 +57,14 @@ const CounterPage = () => {
     };
     
     //searching minor mistakes
-    function handleChange(e) {
-      setSearchTerm(e.target.value);
-      const list = countrydata.filter((p) =>
-        p.name.common.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-      setCountrydata(list);
-    }
+    // function handleChange(e) {
+    //   setSearchTerm(e.target.value);
+    //   const list = countrydata.filter((p) =>
+    //     p.name.common.toLowerCase().includes(e.target.value.toLowerCase())
+    //   );
+    //   setCountrydata(list);
+    // }
+
     
   return (
     <div>
@@ -95,7 +96,7 @@ const CounterPage = () => {
         </h3>
       </div>
       <label>find countries</label>
-      <input value={searchTerm} onChange={handleChange} />
+      {/* <input value={searchTerm} onChange={handleChange} /> */}
       <br />
       {countrydata.length > 1 &&
         countrydata.length < 10 &&
