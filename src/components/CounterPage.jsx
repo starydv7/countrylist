@@ -39,19 +39,19 @@ const CounterPage = () => {
             console.log(newdata)
         }
     }
-    const filterhandle = (e) => {
-        const { value } = e.target
-        if (value !== "empty")
-        {
-            fetch(`https://restcountries.com/v3.1/all/region/${value}`)
-                .then((res) => res.json())
-                .then((res) => {
-                setCountrydata([...res])
-                }).catch((err) => {
-                console.log(err)
-            })
-            }
-    }
+     const filterhandle = (e) => {
+       const { value } = e.target;
+       if (value !== "empty") {
+         fetch(`https://restcountries.com/v3.1/region/${value}`)
+           .then((res) => res.json())
+           .then((res) => {
+             setCountrydata([...res]);
+           })
+           .catch((err) => {
+             console.log(err);
+           });
+       }
+     };
     function handleChange(e) {
       setSearchTerm(e.target.value);
       const list = countrydata.filter((p) =>
