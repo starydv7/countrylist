@@ -71,10 +71,8 @@ const CounterPage = () => {
                     .then((data) => {
                         console.log(data);
                 })
-        })
-         
+        })    
     };
-
     return (
       <div>
         <div>
